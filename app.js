@@ -1,4 +1,3 @@
-
 var express = require("express");
 var app = express();
 var bodyParse = require("body-parser");
@@ -24,6 +23,7 @@ var todo = mongoose.model("Todo", todoSchema);
 //======Express routes Here!============//
 
 app.get("/", function(req, res) {
+    // res.render("index.ejs");
     todo.find({}, function(err, todoList) {
         if(err) console.log(err);
         else {
